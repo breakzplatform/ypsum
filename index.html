@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="robots" content="index, follow">
+	<meta name="theme-color" content="#4EC3CC">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#4EC3CC">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="https://joselito.ninja">
+	<meta name="description" content="O Lorem Ipsum da Geração Y">
+	<meta property="og:description" content="O Lorem Ipsum da Geração Y">
+	<meta property="og:image" content="https://joselito.ninja/ypsum/thumbnail.png">
+	<meta property="og:locale" content="en">
+	<meta property="og:site_name" content="Ypsum | O Lorem Ipsum da Geração Y">
+	<meta property="og:title" content="Ypsum | O Lorem Ipsum da Geração Y">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://joselito.ninja/ypsum/">
+	<meta property="article:published_time" content="2015-12-25T01:00:00Z">
+	<meta property="article:author" content="Joselito Júnior">
+	<meta property="article:section" content="website">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:domain" content="Ypsum | O Lorem Ipsum da Geração Y">
+	<meta name="twitter:url" content="https://joselito.ninja/ypsum/">
+	<meta name="twitter:site" content="https://joselito.ninja/ypsum/">
+	<meta name="twitter:creator" content="Joselito Júnior">
+	<meta name="twitter:title" content="Ypsum | O Lorem Ipsum da Geração Y">
+	<meta name="twitter:description" content="O Lorem Ipsum da Geração Y">
+	<meta name="twitter:image:src" content="https://joselito.ninja/ypsum/thumbnail.png">
+	<title>Ypsum | O Lorem Ipsum da Geração Y</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+	<link rel="stylesheet" href="https://milligram.github.io/css/milligram.min.css">
+	<link rel="canonical" href="https://joselito.ninja/ypsum/">
+	<link rel="image_src" href="https://joselito.ninja/ypsum/thumbnail.png">
+	<link rel="icon" href="favicon.png">
+	<style>
+		body {
+			margin: 4rem auto;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+		}
+
+		.🐶 {
+			max-width: 60rem;
+		}
+
+		h1 {
+			letter-spacing: 0;
+			font-weight: 700;
+			font-style: normal;
+			font-size: 44px;
+			margin-left: -2.75px;
+			line-height: 1.2;
+			letter-spacing: -.04em;
+			color: rgba(0, 0, 0, .8);
+		}
+
+		h2 {
+			font-weight: 300;
+			font-style: normal;
+			font-size: 28px;
+			margin-left: -1.75px;
+			line-height: 1.22;
+			letter-spacing: -.022em;
+			color: rgba(0, 0, 0, .44);
+		}
+
+		button {
+			display: inline-block;
+			position: relative;
+			height: 37px;
+			padding: 0 16px;
+			color: rgba(0, 0, 0, .44);
+			background: rgba(0, 0, 0, 0);
+			font-size: 14px;
+			text-align: center;
+			text-decoration: none;
+			cursor: pointer;
+			border: 1px solid rgba(0, 0, 0, .15);
+			vertical-align: bottom;
+			white-space: nowrap;
+			text-rendering: auto;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			box-sizing: border-box;
+			border-radius: 999em;
+			letter-spacing: 0;
+			font-weight: 400;
+			font-style: normal;
+			text-rendering: optimizeLegibility;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		#👀 {
+			margin: 2rem 0;
+			display: none;
+		}
+
+		a, a:link, a:visited {
+			color: darkgreen;
+			font-weight: 700;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="container 🐶">
+
+		<div class="row">
+			<div class="column">
+				<h1>Ypsum</h1>
+				<h2>O Lorem Ipsum que a Geração Y pensa precisa mas talvez ache que não.</h2>
+				<p>Quantos parágrafos você merece?</p>
+
+				<button>5</button>
+				<button>6</button>
+				<button>7</button>
+				<button>8</button>
+				<button>9</button>
+				<button>10</button>
+
+				<div id="👀"><strong>Aguarde, estamos carregando seu textão.</strong></div>
+
+				<p style="margin-top: 1rem">Saiba mais sobre esse projeto <a href="#">no GitHub</a>.</p>
+			</div>
+		</div>
+
+	</div>
+	<script>
+		var btn = document.querySelectorAll('button');
+		var textaoContent = document.getElementById("👀");
+
+		for (var i = 0; i < btn.length; i++) {
+			btn[i].addEventListener('click', function() {
+					var paragraphs = this.innerHTML;
+					textaoContent.style.display = "block";
+
+					var xhr = new XMLHttpRequest();
+
+					xhr.onreadystatechange = function() {
+						if (xhr.readyState == XMLHttpRequest.DONE) {
+							textaoContent.innerText = xhr.responseText;
+						}
+					}
+
+					xhr.open('GET', 'https://800080.co/ypsum.php?p='+paragraphs, true);
+					xhr.send(null);
+			});
+		}
+	</script>
+</body>
+
+</html>
