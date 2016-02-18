@@ -6,8 +6,8 @@ $textao = [];
 $urls = [];
 $feed = simplexml_load_file("https://medium.com/feed/tag/geracao-y");
 
-foreach($feed->children()->children() as $books) {
-    if($books->link != "") array_push($urls, $books->link);
+foreach($feed->children()->children() as $tags) {
+    if($tags->link != "") array_push($urls, $tags->link);
 }
 
 $dom = new DOMDocument;
