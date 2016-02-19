@@ -2,13 +2,21 @@
 header("Content-Type: text/plain;charset=utf-8");
 header("Access-Control-Allow-Origin: *");
 
+// Detect which response mode to use
+$mode = 'plain-text';
+
+if ($_GET['json']) {
+  $mode = 'json';
+}
+
+// Build the textao
 $textao = [];
 $turls = [];
 $urls = [];
 $feed = simplexml_load_file("https://medium.com/feed/tag/geracao-y");
 
 foreach($feed->children()->children() as $tags) {
-    if($tags->link != "") array_push($urls, $tags->link);
+  if($tags->link != "") array_push($urls, $tags->link);
 }
 
 $dom = new DOMDocument;
@@ -29,21 +37,21 @@ for ($i = 0; $i < $_GET['p']; $i++) {
   }
 }
 
-if ($_GET['json'] == 1) {
-  echo "{\"textao\":[";
+// Serve the textao
+switch ($mode) {
+  case 'json':
+    header('Content-type: application/json');
+    $jsonRoot = array('textao' => []);
+    for ($i = 0; $i < $_GET['p']; $i++) {
+      array_push($jsonRoot['textao'], array('paragraph' => $textao[$i], 'url' => $urls[$i]));
+    }
+    echo json_encode($jsonRoot);
+  break;
 
-  if ($_GET['p'] > 0) {
-    echo "{\"paragraph\":\"" . $textao[0] . "\",";
-    echo "\"url\":\"" . $turls[0] . "\"}";
-  }
-
-  for ($i = 1; $i < $_GET['p']; $i++) {
-    echo ",{\"paragraph\":\"" . $textao[$i] . "\",";
-    echo "\"url\":\"" . $turls[$i] . "\"}";
-  }
-  echo "]}";
-} else {
-  foreach($textao as $text){
-    echo $text . "\n". "\n";
-  }
+  case 'plain-text':
+  default:
+    foreach($textao as $text){
+      echo $text . "\n". "\n";
+    }
+  break;
 }
