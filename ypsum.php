@@ -43,7 +43,7 @@ switch ($mode) {
     header('Content-type: application/json');
     $jsonRoot = array('textao' => []);
     for ($i = 0; $i < $_GET['p']; $i++) {
-      array_push($jsonRoot['textao'], array('paragraph' => $textao[$i], 'url' => $urls[$i]));
+      array_push($jsonRoot['textao'], array('paragraph' => $textao[$i], 'url' => $turls[$i]));
     }
     echo json_encode($jsonRoot);
   break;
