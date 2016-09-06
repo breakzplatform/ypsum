@@ -3,4 +3,4 @@
 
 O Ypsum gera textões usando outros textões reais com a tag "Geração Y" no Medium. Basta escolher o número de parágrafos.
 
-Gere agora mesmo: https://joselito.space/ypsum/
+Gere agora mesmo: https://joselito.pw/ypsum/
